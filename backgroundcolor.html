@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click the button to change the background color!</h1>
+    <button id="changeButton">Change Color</button>
+
+    <script>
+        const changeButton = document.getElementById('changeButton');
+        const body = document.body;
+
+        const colors = [
+            "#f0f0f0", // Light gray
+            "#e0f2f7", // Light blue
+            "#dcedc8", // Light green
+            "#ffe0b2", // Light orange
+            "#f5f0c8", // Light yellow
+            "#f3e5f5",  //Light purple
+            "#e1bee7",  //Lavender
+            "#bbdefb",  //Light blue
+            "#c8e6c9", //Pale green
+            "#ffcdd2", //Light red
+            "#bcaaa4", //Light brown
+             "#eeeeee" //Slightly darker gray
+        ];
+
+        let currentColorIndex = 0;
+
+        changeButton.addEventListener('click', () => {
+            currentColorIndex = (currentColorIndex + 1) % colors.length; // Cycle through colors
+            body.style.backgroundColor = colors[currentColorIndex];
+        });
+    </script>
+
+</body>
+</html>
